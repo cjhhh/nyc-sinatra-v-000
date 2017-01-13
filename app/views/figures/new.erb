@@ -1,0 +1,24 @@
+<h1>Add a Historical Figure info here! <h1>
+
+<form method="post" action='/figures'>
+  <input type="text" name="figure[name]" id="figure_name">
+
+  <% Title.all.each do |title| %>
+   <input type="checkbox" value="<%= title.id %>" name="figure[title_ids][]" id="<%= title.first.id %>"<%= title.name %></input>
+  <% end %>
+  <br></br>
+
+  <% Landmark.all.each do |landmark| %>
+   <input type="checkbox" value="<%= landmark.id %>" name="figure[landmark_ids][]" id="<%= landmark.id %>"<%= landmark.name %></input>
+  <% end %>
+  <br></br>
+
+  <h2> Add a landmark here that corresponds with historical figure </h2>
+   <input type="text" name="landmark[name]">
+    <br></br>
+
+    <h2> Add a title here that corresponds with historical figure </h2>
+     <input type="text" name="title[name]">
+  
+  <input type="submit" value="Create Figure">
+</form>

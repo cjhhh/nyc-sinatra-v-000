@@ -4,9 +4,9 @@ class FiguresController < ApplicationController
     erb :'/figures/index'
   end
 
-  # get '/figures/new' do
-  #   erb :'/figures/new'
-  # end
+  get '/figures/new' do
+    erb :'/figures/new'
+  end
   #
   # get '/figures/show' do
   #   erb :'/figures/show'
@@ -16,4 +16,8 @@ class FiguresController < ApplicationController
   #   erb :'/figures/edit'
   # end
 
+  post '/figures' do
+    @figure = Figure.create(name: params[:figure])
+    @figure.save
+  end
 end
