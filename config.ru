@@ -9,5 +9,4 @@ end
 
 use FiguresController
 use LandmarksController
-use FiguresController
 run ApplicationController

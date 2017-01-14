@@ -1,33 +1,35 @@
-<<<<<<< HEAD
-<h1>Add a Historical Figure info here! <h1>
+<h1>Add a Historical Figure here! <h1>
 
-<form method="post" action='/figures'>
-  <input type="text" name="figure[name]" id="figure_name">
+<form method='post' action='/figures'>
+ <label> Historical Figure Name: </label>
 
-  <% Title.all.each do |title| %>
-   <input type="checkbox" value="<%= title.id %>" name="figure[title_ids][]" id="<%= title.first.id %>"<%= title.name %></input>
-  <% end %>
+ <input type="text" name="figure[name]" id="figure_name">
   <br></br>
 
-  <% Landmark.all.each do |landmark| %>
-   <input type="checkbox" value="<%= landmark.id %>" name="figure[landmark_ids][]" id="<%= landmark.id %>"<%= landmark.name %></input>
-  <% end %>
-  <br></br>
+<label>Current Title: </label>
+ <% Title.all.each do |title| %>
+ <label> <%= title.name %> </label>
+    <input type="checkbox" value="<%=title.id%>" id="title_<%=title.id%>" name="figure[title_ids][]"></input>
+ <% end %>
 
-  <h2> Add a landmark here that corresponds with historical figure </h2>
-   <input type="text" name="landmark[name]">
-    <br></br>
+<br>
 
-    <h2> Add a title here that corresponds with historical figure </h2>
-     <input type="text" name="title[name]">
-  
-  <input type="submit" value="Create Figure">
-=======
-<h1> Hey let's create a figure in history ! </h1>
+<label>Current Landmark: </label>
+ <% Landmark.all.each do |landmark| %>
+    <%= landmark.name %>
+    <input type="checkbox" value="<%=landmark.id%>" id="<%=landmark.id%>" name="figure[landmark_ids][]"></input>
+ <% end %>
 
 
-<form method="post" action="/figures">
-<input type-"text"> 
-  
->>>>>>> fda9f329b47174e4b0a5022d2619492258d18996
+
+  <label> Add another Landmark to the historical figure here: </label>
+    <input type="text" name="landmark[name]" placeholder="Landmark Name">
+    <input type="text" name=landmark[year_completed] placeholder="Year of completion">
+   <br></br>
+
+ <label> Add another Title to the historical figure here: </label>
+   <input type="text" name="title[name]">
+   <br></br>
+
+<input type="submit" value="Create New Figure">
 </form>
