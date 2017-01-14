@@ -16,19 +16,19 @@
 
 <label>Current Landmark: </label>
  <% Landmark.all.each do |landmark| %>
-    <%= landmark.name %>
-    <input type="checkbox" value="<%=landmark.id%>" id="<%=landmark.id%>" name="figure[landmark_ids][]"></input>
+  <label> <%= landmark.name %> </label>
+    <input type="checkbox" value="<%=landmark.id%>" id="landmark_<%=landmark.id%>" name="figure[landmark_ids][]"></input>
  <% end %>
 
 
 
-  <label> Add another Landmark to the historical figure here: </label>
-    <input type="text" name="landmark[name]" placeholder="Landmark Name">
-    <input type="text" name=landmark[year_completed] placeholder="Year of completion">
+  <label> Add a new Landmark to the historical figure here: </label>
+    <input type="text" name="landmark[name]" placeholder="Landmark Name" id="new_landmark">
+    <input type="text" name="landmark[year_completed]" placeholder="Year of completion">
    <br></br>
 
  <label> Add another Title to the historical figure here: </label>
-   <input type="text" name="title[name]">
+   <input type="text" name="title[name]" id="new_title">
    <br></br>
 
 <input type="submit" value="Create New Figure">
