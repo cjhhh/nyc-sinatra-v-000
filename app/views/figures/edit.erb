@@ -1,0 +1,8 @@
+<h1> On this page you can edit your figure </h1>
+
+<form method="post" action='figures/<%= @figure.id %>'/edit>
+  <label> Here is the current name:</label>
+        <%= @figure.name %>
+  <label> Typing into this box will edit that name:</label>
+   <input type="text" name="figure[name]">
+</form>
