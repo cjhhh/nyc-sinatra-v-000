@@ -3,32 +3,33 @@
 <form method='post' action='/figures'>
  <label> Historical Figure Name: </label>
 
+
  <input type="text" name="figure[name]" id="figure_name">
   <br></br>
 
-<label>Current Title: </label>
+
+<label>List of titles: </label>
  <% Title.all.each do |title| %>
  <label> <%= title.name %> </label>
     <input type="checkbox" value="<%=title.id%>" id="title_<%=title.id%>" name="figure[title_ids][]"></input>
  <% end %>
 
-<br>
+<br></br>
 
-<label>Current Landmark: </label>
+<label>List of Landmarks: </label>
  <% Landmark.all.each do |landmark| %>
   <label> <%= landmark.name %> </label>
     <input type="checkbox" value="<%=landmark.id%>" id="landmark_<%=landmark.id%>" name="figure[landmark_ids][]"></input>
  <% end %>
 
-
-
-  <label> Add a new Landmark to the historical figure here: </label>
+  <label> Create a new Landmark to add to the historical figure here: </label>
     <input type="text" name="landmark[name]" placeholder="Landmark Name" id="new_landmark">
     <input type="text" name="landmark[year_completed]" placeholder="Year of completion">
    <br></br>
 
- <label> Add another Title to the historical figure here: </label>
+ <label> Create a new titke to add to the historical figure here: </label>
    <input type="text" name="title[name]" id="new_title">
+
    <br></br>
 
 <input type="submit" value="Create New Figure">
