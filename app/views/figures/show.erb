@@ -1,2 +1,5 @@
 
 <label><%=@figure.name %></label>
+ <% @figure.landmarks.all.each do |landmark|%>
+   <li> <%= landmark.name %> </li>
+ <% end %>
